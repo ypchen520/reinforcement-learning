@@ -10,6 +10,31 @@
     - If you're already using the latest release of Gym (v0.26.2), then you can switch to v0.27.0 of Gymnasium by simply replacing ```import gym``` with ```import gymnasium as gym``` with no additional steps. 
     - Gym will not be receiving any future updates or bug fixes, and no further changes will be made to the core API in Gymnasium.
 
+## Environments
+
+### CliffWalking-v0
+
+![Cliff Walking by OpenAI Gym](./img/cliff_walking.gif)
+
+#### State space
+
+- A $4 \times 12$ grid world
+- Positions represented as flattened index
+  - For example, the starting point (3, 0) is represented as $3 \times 12 + 0 = 36$
+
+#### Action space
+
+- 0: Move up
+- 1: Move right
+- 2: Move down
+- 3: Move left
+
+## Instructions
+
+- run ```pip install requirements.txt```
+- run ```python main.py```
+- the [```main.ipynb```](./main.ipynb) Jupyter Notebook file contains a brief walkthrough of the current implementation
+
 ## Status
 
 - Currently, I'm actively working on modifying this project to make it more readable and modularized
