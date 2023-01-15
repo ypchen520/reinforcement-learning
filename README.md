@@ -1,7 +1,7 @@
 # Reinforcement Learning
 
 - This repository contains Python implementation of basic RL algorithms, including
-  - Value iteration
+  - Value Iteration
   - Q-Learning
 - Environments are provided by [Gymnasium](https://gymnasium.farama.org/)
   - Gymnasium is a maintained fork of OpenAI’s [Gym](https://www.gymlibrary.dev/) library
