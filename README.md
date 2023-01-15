@@ -5,7 +5,7 @@
   - Q-Learning
 - Environments are provided by [Gymnasium](https://gymnasium.farama.org/)
   - Gymnasium is a maintained fork of OpenAI’s [Gym](https://www.gymlibrary.dev/) library
-  - Recent official message
+  - [Recent official message](https://farama.org/Announcing-The-Farama-Foundation)
     - All development of Gym has been moved to Gymnasium, a new package in the Farama Foundation that's maintained by the same team of developers who have maintained Gym for the past 18 months. 
     - If you're already using the latest release of Gym (v0.26.2), then you can switch to v0.27.0 of Gymnasium by simply replacing ```import gym``` with ```import gymnasium as gym``` with no additional steps. 
     - Gym will not be receiving any future updates or bug fixes, and no further changes will be made to the core API in Gymnasium.
