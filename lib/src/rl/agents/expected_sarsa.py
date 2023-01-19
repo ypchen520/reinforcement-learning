@@ -4,19 +4,25 @@ import numpy as np
 import random
 from .td_learning import TDLearningAgent
 
-class QLearningAgent(TDLearningAgent):
+class ExpectedSarsa(TDLearningAgent):
     def __init__(self, env=None, env_name=None, agent_init_info=None):
-        super(QLearningAgent, self).__init__(env, env_name, agent_init_info)
+        super(ExpectedSarsa, self).__init__(env, env_name, agent_init_info)
 
     def update(self, state, next_state, action, reward, is_terminal):
         """
-        Q-learning: off-policy using a policy that is greedy w.r.t the current q estimates
+        Sarsa: off-policy using epsilon-greedy
         """
         target = reward
         if not is_terminal:
-            # the reward is the only update target in the terminal state since the q value is 0 in the terminal state
-            greedy_action = self.greedy(next_state)
-            target += self.gamma * self.q[next_state][greedy_action]
+            """
+            - The reward is the only update target in the terminal state since the q value is 0 in the terminal state
+            - Expected values: 
+              - compute weighted Q(S',A') by iterating through possible actions in the next_state
+              - behavior policy: epsilon-greedy
+            """
+            expected_q_value = super(ExpectedSarsa, self).expected_q(next_state, "epsilon_greedy")
+            target += self.gamma * expected_q_value
+        
         self.q[state][action] = self.q[state][action] + self.alpha * (target - self.q[state][action])
 
     def __str__(self) -> str:

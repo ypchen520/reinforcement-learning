@@ -35,6 +35,8 @@ class Visualization:
                         state = (i-1)*cols + (j-1)
                         action = np.argmax(policy[state])
                         arrow_idx = 24
+                        if state == 36:
+                            print(f"action in state 36: {action}")
                         if action == 0:
                             arrow_idx = 24
                         elif action == 1:

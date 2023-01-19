@@ -34,6 +34,18 @@ class TDLearningAgent(metaclass=abc.ABCMeta):
     def update(self, state, next_state, action, reward, is_terminal):
         raise NotImplementedError
 
+    def expected_q(self, state, policy: str):
+        expected_q_value = 0
+        if policy == "epsilon_greedy":
+            greedy_action = np.argmax(self.q[state])
+            for action in range(self.num_actions):
+                if action == greedy_action:
+                    expected_q_value += (self.epsilon / self.num_actions + 1 - self.epsilon) * self.q[state][action]
+                else:
+                    expected_q_value += self.epsilon / self.num_actions * self.q[state][action]
+        return expected_q_value
+                
+
     def greedy(self, state):
         """
         Args:
