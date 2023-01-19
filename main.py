@@ -21,6 +21,7 @@ if __name__ == "__main__":
     print(spacer)
     print(f"Value Iteration Agent Demo")
     v = ValueIterationAgent(env, "CliffWalking-v0")
+    print(v)
     policy = v.value_iteration(0.001)
     Vis.visualize("CliffWalking-v0", env.shape, v.policy)
 
@@ -36,6 +37,7 @@ if __name__ == "__main__":
         "gamma": 1.0
     }
     q = QLearningAgent(env, "CliffWalking-v0", agent_info)
+    print(q)
     num_episode = 100
     for i in range(num_episode):
         observation, info = env.reset()
