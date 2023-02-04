@@ -21,3 +21,6 @@ class QLearningAgent(TDLearningAgent):
 
     def __str__(self) -> str:
         return f"The {self.__class__.__name__} agent is playing in the {self.env_name} environment. The enviroment has {self.num_states} states. The agent has {self.num_actions} possible actions"
+    
+    def test(self):
+        return self.decay_epsilon()

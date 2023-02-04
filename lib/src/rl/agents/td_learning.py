@@ -15,7 +15,9 @@ class TDLearningAgent(metaclass=abc.ABCMeta):
         {
             num_states (int): The number of states,
             num_actions (int): The number of actions,
-            epsilon (float): The epsilon parameter for exploration,
+            epsilon (float): The initial epsilon parameter for exploration,
+            epsilon_decay (float) = The decay for epsilon,
+            final_epsilon (float): The final epsilon value,
             alpha (float): The step-size,
             gamma (float): The discount factor,
         }
@@ -101,4 +103,6 @@ class TDLearningAgent(metaclass=abc.ABCMeta):
         """
         self.update(prev_state, -1, action, reward, True) #TODO: using -1 to represent the terminal states for now
     
-    
+    def decay_epsilon(self):
+        self.epsilon = max(self.final_epsilon, self.epsilon - self.epsilon_decay)
+        return self.epsilon

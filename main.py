@@ -30,14 +30,20 @@ if __name__ == "__main__":
     ## Q-Learning Agent Demo
     print(spacer)
     env.reset()
+    num_episode = 500
+    initial_epsilon = 1.0
+    epsilon_decay = initial_epsilon / (num_episode / 2)
+
     agent_info = {
         "num_actions": env.action_space.n, 
         "num_states": env.observation_space.n, 
-        "epsilon": 0.1, 
+        "epsilon": initial_epsilon,
+        "epsilon_decay": epsilon_decay,
+        "final_epsilon": 0.1,
         "alpha": 0.5, 
-        "gamma": 1.0
+        "gamma": 0.95
     }
-    num_episode = 500
+    
 
     print(f"Q-Learning Agent Demo")
     q = QLearningAgent(env, "CliffWalking-v0", agent_info)

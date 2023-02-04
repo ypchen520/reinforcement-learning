@@ -20,7 +20,8 @@ class ExpectedSarsa(TDLearningAgent):
               - compute weighted Q(S',A') by iterating through possible actions in the next_state
               - behavior policy: epsilon-greedy
             """
-            expected_q_value = super(ExpectedSarsa, self).expected_q(next_state, "epsilon_greedy")
+            # expected_q_value = super(ExpectedSarsa, self).expected_q(next_state, "epsilon_greedy")
+            expected_q_value = self.expected_q(next_state, "epsilon_greedy")
             target += self.gamma * expected_q_value
         
         self.q[state][action] = self.q[state][action] + self.alpha * (target - self.q[state][action])
