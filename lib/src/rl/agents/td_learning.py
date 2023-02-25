@@ -31,6 +31,7 @@ class TDLearningAgent(metaclass=abc.ABCMeta):
             self.__dict__[key] = val
 
         self.q = np.zeros((self.num_states, self.num_actions))
+        self.training_error = []
     
     @abc.abstractmethod
     def update(self, state, next_state, action, reward, is_terminal):
