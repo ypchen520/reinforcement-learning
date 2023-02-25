@@ -56,4 +56,3 @@
   - the book *Reinforcement Learning, Second Edition* by Rich Sutton and Andrew Barto
   - courses in the *Reinforcement Learning Specialization* offered by University of Alberta on [Coursera](https://www.coursera.org/specializations/reinforcement-learning)
   - research papers on Google Scholar, ACM DL, [Google AI Blog](https://ai.googleblog.com/), and [Workshops](https://neurips.cc/virtual/2022/workshop/49957)
-- I always take [notes](https://github.com/ypchen520/alishan-range/tree/main/RL/RL-Coursera), and share them in another [repository](https://github.com/ypchen520/alishan-range) to get feedback and to help people who are also interested in various topics that I touched on
